@@ -111,15 +111,12 @@ BoldItalicFont={Deja Vu Sans},
 
 
 
-\usepackage{verbatim}
 \newif\ifcnsr
 \newcommand{\cnsr}[1]{
 \ifcnsr
 \begin{sloppypar}\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}\renewcommand{\normalfont}{\itshape}
-%\cnsrfnt
-\cnsrfnt\rndstrng{#1}
- \end{sloppypar}
-\else
+\cnsrfnt\rndstrng{#1}\hspace{0ex}
+\end{sloppypar}\else
 #1\fi}
 \cnsrfalse
 
