@@ -14,6 +14,11 @@
 % The Current Maintainer of this work is Elijah Z Granet.
 \RequirePackage{luacode}
 \hyphenation{■-■}
+\hyphenation{■■-■■}
+\hyphenation{■■■-■■}
+
+
+\newcommand{\cnsrspace}[1]{ }
 \newcommand{\donothing}[1]{■}
 \newcommand{\onething}[1]{■}
 \newcommand{\twothings}[1]{■■}
@@ -33,35 +38,24 @@ end
 local letter = token.create'onething'
  toks[n] = letter
     elseif on and t.cmdname ==  "letter" then
-            local f = math.random (1,20)
-            	if f == 2 then
+            local f = math.random (1,8)
+            if f == 1 then
                local letter = token.create'donothing'
  toks[n] = letter
-         		            elseif f == 3 then
-                    
 
-               local letter = token.create'twothings'  toks[n] = letter
+            	elseif f == 2 then
+               local letter = token.create'twothings'
+ toks[n] = letter
+ elseif f == 3 then
+   local letter = token.create'donothing'  toks[n] = letter
  elseif f == 4 then
- local letter = token.create'donothing'
+               local letter = token.create'twothings'
   toks[n] = letter
-  
-elseif f == 5 then
-                    
-
-               local letter = token.create'twothings'  toks[n] = letter
-               elseif f == 7 then
-                    
-
-               local letter = token.create'twothings'  toks[n] = letter
-               elseif f == 8 then
-                    
-
-               local letter = token.create'donothing'  toks[n] = letter
-               
    else 
                local letter = token.create'onething'
  toks[n] = letter
             	end
+            	          
             	elseif
             on and t.cmdname == "other_char" then
             local f = math.random (1,2)
@@ -97,26 +91,31 @@ lft[#lft + 1] = rndstrng
 token.set_lua("rndstrng", #lft, "global")
 \end{luacode}
 \RequirePackage{fontspec}
-\IfFontExistsTF{Censor}{\newfontface\cnsrfnt[Scale=1.25,
-%To prevent warnings
-ItalicFont={Censor},
-BoldFont={Censor},
-BoldItalicFont={Censor},
-]{Censor}}{\newfontface\cnsrfnt[
+\newfontface\cnsrfnt[RawFeature=+supkern,
+Scale=.9,
 %To prevent warnings
 ItalicFont={Deja Vu Sans},
 BoldFont={Deja Vu Sans},
 BoldItalicFont={Deja Vu Sans},
-]{Deja Vu Sans}}
+]{Deja Vu Sans}
+%}
+\directlua {
+  fonts.handlers.otf.addfeature {
+    name = "supkern",
+    type = "kern",
+    data = {
+      ["■"] = { ["■"] =  -500 },
+    },
+  }
+}
 
 
 
 \newif\ifcnsr
 \newcommand{\cnsr}[1]{
 \ifcnsr
-\begin{sloppypar}\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}\renewcommand{\normalfont}{\itshape}
-\cnsrfnt\rndstrng{#1}\hspace{0ex}
-\end{sloppypar}\else
+{\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}\renewcommand{\normalfont}{\itshape}
+\cnsrfnt\rndstrng{\sloppy #1}\hspace{0ex}}\else
 #1\fi}
 \cnsrfalse
 
