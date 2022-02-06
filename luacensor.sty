@@ -16,9 +16,6 @@
 \hyphenation{■-■}
 \hyphenation{■■-■■}
 \hyphenation{■■■-■■}
-
-
-\newcommand{\cnsrspace}[1]{ }
 \newcommand{\donothing}[1]{■}
 \newcommand{\onething}[1]{■}
 \newcommand{\twothings}[1]{■■}
@@ -58,7 +55,7 @@ local letter = token.create'onething'
             	          
             	elseif
             on and t.cmdname == "other_char" then
-            local f = math.random (1,2)
+            local f = math.random (1,10)
             	if f == 2 then
                local letter = token.create'donothing'
  toks[n] = letter
@@ -93,12 +90,10 @@ token.set_lua("rndstrng", #lft, "global")
 \RequirePackage{fontspec}
 \newfontface\cnsrfnt[RawFeature=+supkern,
 Scale=.9,
-%To prevent warnings
 ItalicFont={Deja Vu Sans},
 BoldFont={Deja Vu Sans},
 BoldItalicFont={Deja Vu Sans},
 ]{Deja Vu Sans}
-%}
 \directlua {
   fonts.handlers.otf.addfeature {
     name = "supkern",
@@ -108,9 +103,6 @@ BoldItalicFont={Deja Vu Sans},
     },
   }
 }
-
-
-
 \newif\ifcnsr
 \newcommand{\cnsr}[1]{
 \ifcnsr
@@ -118,5 +110,3 @@ BoldItalicFont={Deja Vu Sans},
 \cnsrfnt\rndstrng{\sloppy #1}\hspace{0ex}}\else
 #1\fi}
 \cnsrfalse
-
-
