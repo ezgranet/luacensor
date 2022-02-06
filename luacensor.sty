@@ -99,14 +99,17 @@ BoldItalicFont={Deja Vu Sans},
     name = "supkern",
     type = "kern",
     data = {
-      ["■"] = { ["■"] =  -500 },
+      ["■"] = { ["■"] =  -400 },
     },
   }
 }
 \newif\ifcnsr
-\newcommand{\cnsr}[1]{
+\newcommand{\cnsr}[1]{%
 \ifcnsr
-{\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}\renewcommand{\normalfont}{\itshape}
-\cnsrfnt\rndstrng{\sloppy #1}\hspace{0ex}}\else
+{\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}%
+\renewcommand{\normalfont}{\itshape}%
+\cnsrfnt\rndstrng{\sloppy%
+#1}\null}\hspace{-1ex}
+\else
 #1\fi}
 \cnsrfalse
