@@ -13,15 +13,13 @@
 %
 % The Current Maintainer of this work is Elijah Z Granet.
 \RequirePackage{luacode}
-\hyphenation{■-■}
-\hyphenation{■■-■■}
-\hyphenation{■■■-■■}
-\newcommand{\donothing}[1]{■}
-\newcommand{\onething}[1]{■}
-\newcommand{\twothings}[1]{■■}
+
+\newcommand{\onething}{*}
+\newcommand{\twothings}{**}
+\newcommand{\donothing}{}
 \begin{luacode}
 --thanks to TeX.SE users Henri Menke and David Carlile
-local function rndstrng()
+local function rndstring()
     local toks = token.scan_toks()
         local on = true
 for n, t in ipairs(toks) do
@@ -32,22 +30,28 @@ for n, t in ipairs(toks) do
      on = true
 end
  if on and t.cmdname == "escape" then
-local letter = token.create'onething'
+local letter = token.create'donothing'
+ toks[n] = letter 
+elseif on and csname ==  "kern" then 
+               local letter = token.create'donothing'
  toks[n] = letter
     elseif on and t.cmdname ==  "letter" then
-            local f = math.random (1,8)
+            local f = math.random (1,20)
             if f == 1 then
                local letter = token.create'donothing'
  toks[n] = letter
 
             	elseif f == 2 then
-               local letter = token.create'twothings'
+               local letter = token.create'donothing'
  toks[n] = letter
  elseif f == 3 then
    local letter = token.create'donothing'  toks[n] = letter
  elseif f == 4 then
                local letter = token.create'twothings'
   toks[n] = letter
+   elseif f == 5 then
+   local letter = token.create'donothing'  toks[n] = letter
+
    else 
                local letter = token.create'onething'
  toks[n] = letter
@@ -55,15 +59,15 @@ local letter = token.create'onething'
             	          
             	elseif
             on and t.cmdname == "other_char" then
-            local f = math.random (1,10)
+            local f = math.random (1,20)
             	if f == 2 then
                local letter = token.create'donothing'
  toks[n] = letter
          		            elseif f == 3 then
                     
-               local letter = token.create'twothings'  toks[n] = letter
+               local letter = token.create'donothing'  toks[n] = letter
  elseif f == 4 then
- local letter = token.create'onething'
+ local letter = token.create'donothing'
   toks[n] = letter
            		            elseif f == 5 then
                     
@@ -72,7 +76,10 @@ local letter = token.create'onething'
  elseif f == 6 then
                     
 
-               local letter = token.create'twothings'  toks[n] = letter
+               local letter = token.create'donothing'  toks[n] = letter
+                  elseif f == 7 then
+   local letter = token.create'donothing'  toks[n] = letter
+
 
    else 
                local letter = token.create'onething'
@@ -84,32 +91,20 @@ local letter = token.create'onething'
         token.put_next(toks)
 end
 local lft = lua.get_functions_table()
-lft[#lft + 1] = rndstrng
-token.set_lua("rndstrng", #lft, "global")
+lft[#lft + 1] = rndstring
+token.set_lua("rndstring", #lft, "global")
 \end{luacode}
 \RequirePackage{fontspec}
-\newfontface\cnsrfnt[RawFeature=+supkern,
-Scale=.9,
-ItalicFont={Deja Vu Sans},
-BoldFont={Deja Vu Sans},
-BoldItalicFont={Deja Vu Sans},
-]{Deja Vu Sans}
-\directlua {
-  fonts.handlers.otf.addfeature {
-    name = "supkern",
-    type = "kern",
-    data = {
-      ["■"] = { ["■"] =  -400 },
-    },
-  }
-}
-\newif\ifcnsr
+\newfontface\flowblock[Scale=1]{Flow Block}
+\newfontface\djvu{Deja Vu Sans}
+%\newfontface\flowblock{Censor}
+\newif\ifcnsr\cnsrfalse
 \newcommand{\cnsr}[1]{%
-\ifcnsr
-{\renewcommand{\texttt}{\textit}\renewcommand{\ttfamily}{\itshape}\renewcommand{\sffamily}{\itshape}%
-\renewcommand{\normalfont}{\itshape}%
-\cnsrfnt\rndstrng{\sloppy%
-#1}\null}\hspace{-1ex}
-\else
-#1\fi}
-\cnsrfalse
+  \ifcnsr
+{\renewcommand*{\kern}{}\renewcommand*{\itshape}{\flowblock}\renewcommand*{\normalfont}{\flowblock}\renewcommand{\bfseries}{\flowblock}\renewcommand*{\ttfamily}{\flowblock}
+\renewcommand*{\sfdefault}{\flowblock}\renewcommand*{\itdefault}{\flowblock}
+\renewcommand*{\rmdefault}{\flowblock}\flowblock\sloppy\rndstring{#1}}
+  \else
+   #1
+  \fi
+}
