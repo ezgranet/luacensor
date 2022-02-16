@@ -11,13 +11,15 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 %
-% The Current Maintainer of this work is Elijah Z Granet.
+% The Current Maintainer of this work is Elijah Z Granet
+
 \RequirePackage{luacode}
 \RequirePackage{fontspec}
+\RequirePackage[final]{microtype}
 %\newfontface\flowblock[Scale=1]{Flow Block}
-\IfFontExistsTF{Flow Block}{\newfontface\cnsrfnt{Flow Block}
-\newcommand{\onething}{\cnsrfnt*}
-\newcommand{\twothings}{\cnsrfnt**}
+\IfFontExistsTF{Redacted}{\newfontface\cnsrfnt{Redacted}
+\newcommand{\onething}{\cnsrfnt •}
+\newcommand{\twothings}{\cnsrfnt ••}
 \newcommand{\donothing}{}
 }{
 \newfontface\cnsrfnt[Scale=1.01%To allow for separate use of source sans in text
@@ -32,7 +34,8 @@
   \ifcnsr
 {\renewcommand*{\kern}{}\renewcommand*{\itshape}{\cnsrfnt}\renewcommand*{\normalfont}{\cnsrfnt}\renewcommand{\bfseries}{\cnsrfnt}\renewcommand*{\ttfamily}{\cnsrfnt}
 \renewcommand*{\sfdefault}{\cnsrfnt}\renewcommand*{\itdefault}{\cnsrfnt}
-\renewcommand*{\rmdefault}{\cnsrfnt}\cnsrfnt\sloppy\rndstring{#1}}
+\renewcommand*{\rmdefault}{\cnsrfnt}
+\setlength\emergencystretch{\textwidth}\cnsrfnt\sloppy\rndstring{#1}}
   \else
    #1
   \fi
