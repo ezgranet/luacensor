@@ -17,4 +17,4 @@ The main command for the package is:
 
 
 ## Licence
-This projected is licensed under the LPPL.
+This projected is licensed under the LPPL.  Redacted is licensed under the OFL.

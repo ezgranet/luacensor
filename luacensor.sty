@@ -12,27 +12,29 @@
 % This work has the LPPL maintenance status `maintained'.
 %
 % The Current Maintainer of this work is Elijah Z Granet
-
+\RequirePackage{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
 \RequirePackage{luacode}
 \RequirePackage{fontspec}
 \RequirePackage[final]{microtype}
-%\newfontface\flowblock[Scale=1]{Flow Block}
 \IfFontExistsTF{Redacted}{\newfontface\cnsrfnt{Redacted}
-\newcommand{\onething}{\cnsrfnt •}
-\newcommand{\twothings}{\cnsrfnt ••}
+\newcommand{\onething}{\cnsrfnt • }
+\newcommand{\twothings}{\cnsrfnt • • }
 \newcommand{\donothing}{}
+\hyphenation{•-•}
 }{
-\newfontface\cnsrfnt[Scale=1.01%To allow for separate use of source sans in text
+\newfontface\cnsrfnt[Scale=1.01,WordSpace=0,%To allow for separate use of source sans in text
 ]{Source Sans Pro Black}
-\newcommand{\onething}{\cnsrfnt▬}
-\newcommand{\twothings}{\cnsrfnt▬▬}
+\newcommand{\onething}{\cnsrfnt ▬ }
+\newcommand{\twothings}{\cnsrfnt ▬ ▬ }
 \newcommand{\donothing}{}
+\hyphenation{▬-▬}
 }
 
 \newif\ifcnsr\cnsrfalse
 \newcommand{\cnsr}[1]{%
   \ifcnsr%
-{\rndstring{#1}}
+{\sloppy\rndstring{#1}}
   \else
    #1
   \fi
@@ -79,7 +81,36 @@ elseif on and csname ==  "kern" then
                local letter = token.create'onething'
  toks[n] = letter
             	end
-            	          
+            	elseif
+            on and t.cmdname == "spacer" then
+            local f = math.random (1,20)
+            	if f == 2 then
+               local letter = token.create'donothing'
+ toks[n] = letter
+         		            elseif f == 3 then
+                    
+               local letter = token.create'donothing'  toks[n] = letter
+ elseif f == 4 then
+ local letter = token.create'donothing'
+  toks[n] = letter
+           		            elseif f == 5 then
+                    
+
+               local letter = token.create'twothings'  toks[n] = letter
+ elseif f == 6 then
+                    
+
+               local letter = token.create'donothing'  toks[n] = letter
+                  elseif f == 7 then
+   local letter = token.create'donothing'  toks[n] = letter
+
+
+   else 
+               local letter = token.create'onething'
+ toks[n] = letter
+ 
+            	end
+
             	elseif
             on and t.cmdname == "other_char" then
             local f = math.random (1,20)
