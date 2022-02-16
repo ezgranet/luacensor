@@ -13,10 +13,33 @@
 %
 % The Current Maintainer of this work is Elijah Z Granet.
 \RequirePackage{luacode}
-
-\newcommand{\onething}{*}
-\newcommand{\twothings}{**}
+\RequirePackage{fontspec}
+%\newfontface\flowblock[Scale=1]{Flow Block}
+\IfFontExistsTF{Flow Block}{\newfontface\cnsrfnt{Flow Block}
+\newcommand{\onething}{\cnsrfnt*}
+\newcommand{\twothings}{\cnsrfnt**}
 \newcommand{\donothing}{}
+}{
+\newfontface\cnsrfnt[Scale=1.01%To allow for separate use of source sans in text
+]{Source Sans Pro Black}
+\newcommand{\onething}{\cnsrfnt▬}
+\newcommand{\twothings}{\cnsrfnt▬▬}
+\newcommand{\donothing}{}
+}
+
+\newif\ifcnsr\cnsrfalse
+\newcommand{\cnsr}[1]{%
+  \ifcnsr
+{\renewcommand*{\kern}{}\renewcommand*{\itshape}{\cnsrfnt}\renewcommand*{\normalfont}{\cnsrfnt}\renewcommand{\bfseries}{\cnsrfnt}\renewcommand*{\ttfamily}{\cnsrfnt}
+\renewcommand*{\sfdefault}{\cnsrfnt}\renewcommand*{\itdefault}{\cnsrfnt}
+\renewcommand*{\rmdefault}{\cnsrfnt}\cnsrfnt\sloppy\rndstring{#1}}
+  \else
+   #1
+  \fi
+}
+
+
+
 \begin{luacode}
 --thanks to TeX.SE users Henri Menke and David Carlile
 local function rndstring()
@@ -94,17 +117,3 @@ local lft = lua.get_functions_table()
 lft[#lft + 1] = rndstring
 token.set_lua("rndstring", #lft, "global")
 \end{luacode}
-\RequirePackage{fontspec}
-\newfontface\flowblock[Scale=1]{Flow Block}
-\newfontface\djvu{Deja Vu Sans}
-%\newfontface\flowblock{Censor}
-\newif\ifcnsr\cnsrfalse
-\newcommand{\cnsr}[1]{%
-  \ifcnsr
-{\renewcommand*{\kern}{}\renewcommand*{\itshape}{\flowblock}\renewcommand*{\normalfont}{\flowblock}\renewcommand{\bfseries}{\flowblock}\renewcommand*{\ttfamily}{\flowblock}
-\renewcommand*{\sfdefault}{\flowblock}\renewcommand*{\itdefault}{\flowblock}
-\renewcommand*{\rmdefault}{\flowblock}\flowblock\sloppy\rndstring{#1}}
-  \else
-   #1
-  \fi
-}
