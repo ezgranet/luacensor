@@ -31,11 +31,8 @@
 
 \newif\ifcnsr\cnsrfalse
 \newcommand{\cnsr}[1]{%
-  \ifcnsr
-{\renewcommand*{\kern}{}\renewcommand*{\itshape}{\cnsrfnt}\renewcommand*{\normalfont}{\cnsrfnt}\renewcommand{\bfseries}{\cnsrfnt}\renewcommand*{\ttfamily}{\cnsrfnt}
-\renewcommand*{\sfdefault}{\cnsrfnt}\renewcommand*{\itdefault}{\cnsrfnt}
-\renewcommand*{\rmdefault}{\cnsrfnt}
-\setlength\emergencystretch{\textwidth}\cnsrfnt\sloppy\rndstring{#1}}
+  \ifcnsr%
+{\rndstring{#1}}
   \else
    #1
   \fi
