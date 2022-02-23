@@ -14,8 +14,8 @@
 \usepackage{luacode}
 %\usepackage[firstnumber=last]{fancyvrb}
 \usepackage{minted}
-\date{\today}
-\author{Elijah Z Granet\thanks{e-mail: \href{mailto:ezg21@cantab.ac.uk}{ezg21@cantab.ac.uk}}}
+\date{\today\\\smallskip\ttfamily Version \luacensorversionnumber}
+\author{Elijah Z Granet\thanks{e-mail: \href{mailto:ezg21@cantab.ac.uk}{\ttfamily ezg21@cantab.ac.uk}}}
 
 \title{\texttt{LuaCensor}:\\A package for redacting sensitive information}
 
@@ -27,49 +27,96 @@
 This package redacts sensitive information using \texttt{Lua}, and adds accessibility support.
 \subsection{Usage}
 The package is called with:
-
+\begin{quote}
 \begin{minted}{latex}
 \usepackage{luacensor}
 \end{minted}
+\end{quote}
 
 Sensitive information is enclosed within the command:
-
+\begin{quote}
 \begin{minted}{latex}
 \cnsr{John Smith}
 \end{minted}
+\end{quote}
 
 When the outputted document is intended for authorised readers who are supposed to see sensitive information, no further action is needed.  When the outputted document is for general audiences, who are \textit{not} supposed to see sensitive information, add the following line to the preamble:
-
+\begin{quote}
 \begin{minted}{latex}
 \cnsrtrue
 \end{minted}
+\end{quote}
 
 This activates the censoring globally.
+\subsection{The \texttt{\color{red}warning} option}
+For many documents, the presence or absence of redaction in the document will be obvious by black bars in the first page. However, for other documents, particularly long reports or, for example, a court judgment with a title page, it is useful to give an indication.  This can be done by calling the package with:
+\begin{quote}
+	\begin{minted}{latex}
+	\usepackage[warning]{luacensor}
+	\end{minted}
+\end{quote}
+	This prints automatically prints a warning at the top of the page indicating either that the text is redacted or unredacted.  The default `safe' and `danger' warnings, below, are there mostly as a place holder, because it is anticipated that the precise wording of the warning will vary by jurisdiction.\clearpage
+
+\begin{center}
+\textit{The default danger warning:}\\
+\color{red}\tworules\vskip 5pt\allwarning
+\vskip5pt\tworules%
+\end{center}%
+
+\begin{center}
+	\textit{The default safe warning:}\\
+	\begin{center}
+\color{forestgreen}
+\tworules\vskip5pt
+\normalsize\normalfont\sffamily\bfseries\textsafe
+\vskip5pt\tworules
+\end{center}
+\end{center}
+
+As I noted above, it is unlikely these default options will be suitable for most situations, and for this reason it is easy to change.  To alter the text used in the `safe' option, simply use:
+
+\noindent\begin{minted}{latex}
+ 
+ \renewcommand{\textsafe}{This is the text in safe mode}	
+ 
+\end{minted}
+
+To change the warning heading option for the `danger' text, renew the command \verb+\warnword+ to change the word `warning', renew the command \verb+\dangerblock+ to alter or remove the warning triangles.  The other commands for more custom changing of the warning are all in the source code and easily altered for even more custom work.
+
+\noindent\begin{minted}{latex}
+\renewcommand{\textwarn}{This is the text  in danger mode}	
+\end{minted}
+To alter the warning triangles, 
+
+
+		
+		
+
+
 \subsection{Requirements}
-This package will \textbf{only} work in Lua\LaTeX. The package works out of the box with a standard \TeX\ distribution, but ideally, I would strongly suggest installing the free (\textit{libre} \& \textit{gratis}) `Redacted' font from Google Fonts, which gives a quite æsthetically pleasing black bar effect.\footnote{Available at: \url{https://fonts.google.com/specimen/Redacted}.}
-\subsection{\color{red}Warning}
-The package is completely effective at censoring text formatted with normal \LaTeX\ commands, by which I mean that it is impossible for someone to ascertain the original text (or even its precise length) from the outputted \MakeLowercase{\textsc{PDF}} when the \verb|\cnsrtrue| option has been activated. 
+This package will \textbf{only} work in Lua\LaTeX. The package works out of the box with a standard \TeX\ distribution, but ideally, I would strongly suggest installing the free (\textit{libre} \& \textit{gratis}) `Redacted' font from Google Fonts, which gives a quite æsthetically pleasing black bar effect.\footnote{Available at: \url{https://fonts.google.com/specimen/Redacted}; a versioin is also available at the GitHub repo of this project: \url{https://github.com/ezgranet/luacensor}}
+\subsection{\color{red}Limitations}
+The package is completely effective at censoring text formatted with normal \LaTeX\ commands, by which I mean that it is impossible for someone to ascertain the original text (or even its precise length) from the outputted \MakeLowercase{\textsc{PDF}} when the \verb|\cnsrtrue| option has been activated.   
 
  However, math mode is used, it will censor numbers, but not operators or \TeX\ (as opposed to Unicode) operators.  This is probably fine for most instances, but unacceptable where security is of the highest priority, and I would not really recommend using this package to censor highly secret formulæ; the \texttt{censor} package in your \TeX\ distribution will do a better job of that.  The package is set to completely disappear the output (as opposed to black bar over) of the \texttt{math}, \texttt{align}, \texttt{equation}, \texttt{tabular}, and a few other environments, as disappearing these environments proved more secure than the piecemeal blacking out I saw.  It is probable that there are packages and macros that will break the \texttt{cnsr} macro, and therefore, care should be taken to always examine output before public distribution.
+ 
+ Users should also be aware that many \TeX\ primitives confuse the package, in particular \verb+\vskip+, \verb+\hskip+ \textit{etc} that take arguments outside curly braces cause difficulties; the best solution is simply to either use the \LaTeX\ alternatives (\textit{eg}, \verb+\hspace+) or enclose the primitives in the \verb+\hddn+ command which simply disappears them.
  \subsection{Demonstration}
  \begin{quote}
- \begin{minted}[fontsize=\footnotesize,
-,breaklines]{latex}
+ \begin{minted}[fontsize=\footnotesize,breaklines]{latex}
 %In the preamble: \usepackage{luacensor}
 \begin{quote}
-\cnsrtrue\footnotesize Whereas recognition of the \cnsr{inherent dignity and of the equal and inalienable rights of all members of the human family} is the foundation of freedom, justice and peace in the world,
+\footnotesize \cnsr{Whereas recognition} of the \cnsrtrue\cnsr{inherent dignity and of the equal and inalienable rights of all members of the human family} is the foundation of freedom, justice and peace in the world,
 
 \cnsr{Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind, and the advent of a world in which human beings shall enjoy freedom of speech and belief and freedom from fear and want has been proclaimed as the highest aspiration of the common people,}
+\end{quote}
  \end{minted}
  \end{quote}
- \begin{quote}
-\cnsrtrue\footnotesize Whereas recognition of the \cnsr{inherent dignity and of the equal and inalienable rights of all members of the human family} is the foundation of freedom, justice and peace in the world,
+\begin{quote}
+\footnotesize \cnsr{Whereas recognition} of the \cnsrtrue\cnsr{inherent dignity and of the equal and inalienable rights of all members of the human family} is the foundation of freedom, justice and peace in the world,
 
 \cnsr{Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind, and the advent of a world in which human beings shall enjoy freedom of speech and belief and freedom from fear and want has been proclaimed as the highest aspiration of the common people,}
-
- \end{quote}
- 
- \clearpage
+\end{quote} \clearpage
 
 
 
@@ -94,7 +141,7 @@ To overcome this limitation, the package uses the \texttt{accsup} package to add
 All bugs, feature requests, or other technical points should be submitted to the package's official Github page.\footnote{\url{https://github.com/ezgranet/luacensor}}
 
 \subsection{Licensing}
-The software is free and open-sour ce software licensed under the Latex Public Project Licence.\footnote{\url{https://www.latex-project.org/lppl/}} 
+The software is free and open-sour ce software licensed under the Latex Public Project Licence, version 1.3\textit{c}.\footnote{\url{https://www.latex-project.org/lppl/}} 
 
 
 \subsection{Some useful advice}
@@ -113,9 +160,14 @@ breaklines,
 firstnumber=last
 ]
 {latex}
+%luacensor.sty
+%luacensor.sty
+\def\luacensorversionnumber{1.1.0}
 \ProvidesPackage{luacensor}
-[2022/02/17
+[2022/02/22 \luacensorversionnumber\
  Redact sensitive information using Lua]
+% !TeX program = lualatex                                   
+% !TeX encoding = utf8
 % This work may be distributed and/or modified under the 
 % conditions of the LaTeX Project Public License, either version 1.3 
 % of this license or (at your option) any later version.
@@ -127,6 +179,16 @@ firstnumber=last
 % This work has the LPPL maintenance status `maintained'.
 %
 % The Current Maintainer of this work is Elijah Z Granet
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% option (we'll come back
+% to this later
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifwarning
+\warningfalse
+\DeclareOption{warning}{\warningtrue}
+\ProcessOptions*
 \end{minted}
 \subsection{Dependencies}
 \begin{minted}[
@@ -138,14 +200,16 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{latex}
+]
+{latex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEPENDENCIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{luacode}
-\RequirePackage{environ}
+\RequirePackage{environ}% http://ctan.org/pkg/environ
+
 \RequirePackage{verbatim}
 % ^ for the censoring
 \RequirePackage{accsupp}
@@ -156,10 +220,13 @@ firstnumber=last
 %a lighter version of this
 %package with just asterisks 
 %or `[TEXT-REDACTED]'
-%And perhaps that's better for
+%And perhaps that would be better for
 %the environment with printing
+%BUT I MADE MY CHOICE!
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
 \end{minted}
-\subsection{Fonts}
+\subsection{fonts}
 \begin{minted}[
 frame=lines,
 framesep=2mm,
@@ -169,7 +236,8 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{latex}
+]
+{latex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FONTS
@@ -188,15 +256,16 @@ firstnumber=last
 \IfFontExistsTF{Redacted}{%
 \newfontface\cnsrfnt[%%%%%%
 %the scale is arbitrary, but kind of works
-Scale=1.1,
+%Scale=1.1,
 %%the below declarations are to prevent warnings about shapes not being available
-ItalicFont=Redacted,%
-BoldItalicFont=Redacted,%
-BoldFont=Redacted,%
-SmallCapsFont=Redacted]{Redacted}
+%WordSpace=0,
+ItalicFont={Redacted},%
+BoldItalicFont={Redacted},%
+BoldFont={Redacted},%
+SmallCapsFont={Redacted}]{Redacted}
 \newcommand{\onething}{\cnsrfnt\ • }
-\newcommand{\twothings}{\cnsrfnt\ • • }
-\newcommand{\donothing}{}
+\newcommand{\twothings}{\cnsrfnt\ • •}
+\newcommand{\donothing}{\cnsrfnt\ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The little spaces let justification happen
@@ -204,7 +273,7 @@ SmallCapsFont=Redacted]{Redacted}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% x chosen as an arbitrary average width
+% • chosen as an arbitrary average width
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 }{
@@ -227,13 +296,10 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\onething}{\cnsrfnt ▬ }
 \newcommand{\twothings}{\cnsrfnt ▬ ▬ }
-\newcommand{\donothing}{}
+\newcommand{\donothing}{ }
 }
 \end{minted}
-
-
-
-\subsection{Eliminate pesky environments}
+\subsection{Removing pesky environments}
 \begin{minted}[
 frame=lines,
 framesep=2mm,
@@ -243,9 +309,8 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{latex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+]
+{latex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A neat fallback for disappearing things…
@@ -273,8 +338,10 @@ firstnumber=last
 }{\end{@empty}}
 \voidenvironment{hidden}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{minted}
-\subsection{The \texttt{cnsr} command}
+\subsection{The `\texttt{cnsr}' command}
 \begin{minted}[
 frame=lines,
 framesep=2mm,
@@ -284,10 +351,8 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{latex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+]
+{latex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,16 +361,15 @@ firstnumber=last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newif\ifcnsr\cnsrfalse
-
 \newcommand{\cnsr}[1]{%
-  \ifcnsr{%
-\voidenvironment{equation*}
-\voidenvironment{equation}
-\voidenvironment{table}
-\voidenvironment{table*}
-\voidenvironment{tabular}
-\voidenvironment{tabular*}
-\voidenvironment{}
+\ifcnsr{%
+\voidenvironment{equation*}%
+\voidenvironment{equation}%
+\voidenvironment{table}%
+\voidenvironment{table*}%
+\voidenvironment{tabular}%
+\voidenvironment{tabular*}%
+\voidenvironment{}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % I don't know how many
 % people use TEX native accent commands
@@ -314,43 +378,29 @@ firstnumber=last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\`}[1]{}
-\renewcommand{\'}[1]{}
-\renewcommand{\^}[1]{}
-\renewcommand{\"}[1]{}
-\renewcommand{\H}[1]{}
-\renewcommand{\~}[1]{}
-\renewcommand{\c}[1]{}
-\renewcommand{\k}[1]{}
-\renewcommand{\l}[1]{}
-\renewcommand{\=}[1]{}
-\renewcommand{\b}[1]{}
-\renewcommand{\.}[1]{}
-\renewcommand{\d}[1]{}
-\renewcommand{\r}[1]{}
-\renewcommand{\u}[1]{}
-\renewcommand{\v}[1]{}
-\renewcommand{\t}[1]{}
-\renewcommand{\o}[1]{}
-\renewcommand{\i}[1]{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TEX primitives can break the
-%code because they don't have the good manners
-%to put their arguments in brackets
-%No offence, of course, to the 
-%honoured Prof Knuth, who had
-%magnificent genius reasons 
-%for coding things that way
-%it's just that i'm an idiot
-%and therefore need things simple
+\renewcommand{\`}[1]{}%
+\renewcommand{\'}[1]{}%
+\renewcommand{\^}[1]{}%
+\renewcommand{\"}[1]{}%
+\renewcommand{\H}[1]{}%
+\renewcommand{\~}[1]{}%
+\renewcommand{\c}[1]{}%
+\renewcommand{\k}[1]{}%
+\renewcommand{\l}[1]{}%
+\renewcommand{\=}[1]{}%
+\renewcommand{\b}[1]{}%
+\renewcommand{\.}[1]{}%
+\renewcommand{\d}[1]{}%
+\renewcommand{\r}[1]{}%
+\renewcommand{\u}[1]{}%
+\renewcommand{\v}[1]{}%
+\renewcommand{\t}[1]{}%
+\renewcommand{\o}[1]{}%
+\renewcommand{\i}[1]{}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\hskip}[1]{}
-\renewcommand{\vskip}[1]{}
-\renewcommand{\raise}[1]{}
-\renewcommand{\lower}[1]{}
-\renewcommand{\kern}[1]{}
 % here we have the accsupp magic
 % this operates by replacing the 'x's 
 % or unicode black squares as the case
@@ -365,10 +415,9 @@ firstnumber=last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \BeginAccSupp{method=plain,ActualText={TEXT REDACTED}}%
-\rndstring{#1}
-\EndAccSupp{}%
-}
-  \else%
+\rndstring{#1}%
+\EndAccSupp{}}%
+\else%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if the conditional is off
@@ -377,8 +426,10 @@ firstnumber=last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 #1%
 \fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{minted}
-\subsection{The Lua Magic}
+\subsection{the Lua magic}
 \begin{minted}[
 frame=lines,
 framesep=2mm,
@@ -388,9 +439,8 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{latex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+]
+{latex}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The LUA MAGIC PART
@@ -409,14 +459,14 @@ fontsize=\footnotesize,
 linenos,
 breaklines,
 firstnumber=last
-]{lua}
+]
+{lua}
 --fulsome thanks to TeX.SE users Henri Menke and David Carlisle, without whom none of this would be possible 
 local function rndstring()
-
     local toks = token.scan_toks(s)
-        local on = tfrue
+        local on = true
 for n, t in ipairs(toks) do
-    if t.csname == "begin" or t.csname == "end"  then
+    if t.csname == "begin" or t.csname == "end" then
        on = false
 -- The below is necessary as TeX primitives can break the code otherwise because they do not use brackets       
     end
@@ -428,7 +478,7 @@ end
 if on and t.csname ==  "&" then
   local letter = token.create'donothing'
  toks[n] = letter
-
+ 
 elseif on and t.csname == "%" then
   local letter = token.create'donothing'
  toks[n] = letter
@@ -461,12 +511,7 @@ elseif on and t.csname == "^" then
   local letter = token.create'donothing'
  toks[n] = letter
 elseif on and t.cmdname ==  "letter" then
--- The below is the randomness part of this, which I admit is fairly arbitrary, 
---but will more often  artificially shorten
---strings than lengthen them, as testing 
---found if lengthening was too frequent, it 
---led to really unsightly long strings. 
-
+-- The below is the randomness part of this, which I admit is fairly arbitrary, but will more often  artificially shorten strings than lengthen them, as testing found if lengthening was too frequent, it led to really unsightly long strings. 
             local f = math.random (1,20)
             if f == 1 then
                local letter = token.create'donothing'
@@ -517,40 +562,41 @@ elseif on and t.cmdname ==  "letter" then
  
             	end
 
-elseif on and t.cmdname == "other_char" then
+            	elseif
+            on and t.cmdname == "other_char" then
             local f = math.random (1,20)
-
-if f == 2 then local letter = token.create'donothing'
+            	if f == 2 then
+               local letter = token.create'donothing'
  toks[n] = letter
+         		            elseif f == 3 then
+                    
+               local letter = token.create'donothing'  toks[n] = letter
+ elseif f == 4 then
+ local letter = token.create'donothing'
+  toks[n] = letter
+           		            elseif f == 5 then
+                    
 
-elseif f == 3 then
-local letter = token.create'donothing'  toks[n] = letter
-               
-elseif f == 4 then
-	local letter = token.create'donothing'
-  	toks[n] = letter
-
-elseif f == 5 then
-	local letter = token.create'twothings' 
-	toks[n] = letter
-               
+               local letter = token.create'twothings'  toks[n] = letter
  elseif f == 6 then
-local letter = token.create'donothing'  toks[n] = letter
+                    
 
-elseif f == 7 then
-local letter = token.create'donothing'  toks[n] = letter
+               local letter = token.create'donothing'  toks[n] = letter
+                  elseif f == 7 then
+   local letter = token.create'donothing'  toks[n] = letter
 
 
-else local letter = token.create'onething'
+   else 
+               local letter = token.create'onething'
  toks[n] = letter
  
-		end
-			end
-				end
+            	end
+                    end
+    end
  --Drop the token in and move on
         token.put_next(toks)
-								end
-	local lft = lua.get_functions_table()
+end
+local lft = lua.get_functions_table()
 --make a global command
 lft[#lft + 1] = rndstring
 token.set_lua("rndstring", #lft, "global")
@@ -562,13 +608,117 @@ baselinestretch=1.2,
 bgcolor=LightGray,
 fontsize=\footnotesize,
 linenos,
-breaklines, firstnumber=last
-]{latex}
+breaklines,
+firstnumber=last
+]
+{latex}
 \end{luacode}
 \end{minted}
-\clearpage
+\subsection{The `{\ttfamily\color{red}warning}' option}
+\begin{minted}[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=LightGray,
+fontsize=\footnotesize,
+linenos,
+breaklines,
+firstnumber=last
+]
+{latex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WARNING FUN YAY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitely this whole section
+%is there to be user modified, because 
+% depending on language, jurisdiction
+%type of document etc, everyone will need
+%a specific warning style. So the important
+% part of the code here is the 
+% conditional and global [warning]
+% option, because that's the magic value added
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fonts for the warning:
+%I chose default LaTeX fonts
+% here to be changed as users wish
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newfontface\wrnstncl{QT Military}
+\newcommand{\warnword}{WARNING}
+\newfontface\smbl{Deja Vu Sans Bold}
+\newcommand{\danger}{\smbl ⚠︎\normalfont}
+\newcommand{\warnformat}{\sffamily\bfseries \color{red}}
+\newcommand{\textwarn}{This document is {\underline{NOT}}  redacted. It contains private and confidential personal data, and may {\underline{NOT}} be distributed, published, or shown to those without the right to view such information.  The publication of the information in this document may constitute a contempt of court, punishable by a term of imprisonment.}
+\newcommand{\textsafe}{This document has been altered to remove sensitive personal data.  It is cleared for publication and dissemination.
+}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+	\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\newcommand{\dquad}{\danger\danger\danger\danger}
+\newcommand{\dangersign}[1]{\scalebox{2}{\huge\danger}}
+\newcommand{\dangerblock}{\scalebox{2}{\huge\danger\quad\danger\quad\danger}}
+\newcommand{\warnblock}{{\Large\wrnstncl\warnword\quad\warnword\quad\warnword}}
+\newcommand{\tworules}{\hrule width \hsize height .7pt\vskip2pt\hrule width \hsize height .7pt}
+\newcommand{\allwarning}{\dangerblock\\\warnblock\\\normalfont\smallskip\warnformat\textwarn }
+\newcommand{\confwarning}{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The warning option
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifwarning
+\ifcnsr 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a note saying document is redacted
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\color{forestgreen}
+\tworules\vskip5pt
+\normalsize\normalfont\sffamily\bfseries\textsafe
+\vskip5pt\tworules
+\end{center}
+\else 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The WARNING for un-redacted docs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}\color{red}\tworules\vskip 5pt\allwarning
+\vskip5pt\tworules%
+\end{center}%
+\fi%
+\else\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allow \maketitle
+% on same page 
+% yay
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifwarning\let\oldmaketitle\maketitle\renewcommand{\maketitle}{{\let\newpage\relax\maketitle}}\else\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% print the warning at the start of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{\confwarning}
+\end{minted}
 \section{Version History}
-\subsection{\texttt{1.00}}
+\subsection{\texttt{1.1.0}}
+\ttfamily 22 February 2022: Added the `warning' option and fixed a few  errors in the code resulting from \TeX\ primitives causing issues.
+\subsection{\texttt{1.0.0}}
 \ttfamily 18 February 2022: Package creation
 
 	

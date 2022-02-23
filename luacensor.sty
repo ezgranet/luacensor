@@ -1,7 +1,7 @@
 %luacensor.sty
-\def\luacensorversionnumber{1.0.0}
+\def\luacensorversionnumber{1.1.0}
 \ProvidesPackage{luacensor}
-[2022/02/18 \luacensorversionnumber\
+[2022/02/22 \luacensorversionnumber\
  Redact sensitive information using Lua]
 % !TeX program = lualatex                                   
 % !TeX encoding = utf8
@@ -16,6 +16,16 @@
 % This work has the LPPL maintenance status `maintained'.
 %
 % The Current Maintainer of this work is Elijah Z Granet
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% option (we'll come back
+% to this later
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifwarning
+\warningfalse
+\DeclareOption{warning}{\warningtrue}
+\ProcessOptions*
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEPENDENCIES
@@ -34,8 +44,11 @@
 %a lighter version of this
 %package with just asterisks 
 %or `[TEXT-REDACTED]'
-%And perhaps that's better for
+%And perhaps that would be better for
 %the environment with printing
+%BUT I MADE MY CHOICE!
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FONTS
@@ -54,15 +67,16 @@
 \IfFontExistsTF{Redacted}{%
 \newfontface\cnsrfnt[%%%%%%
 %the scale is arbitrary, but kind of works
-Scale=1.1,
+%Scale=1.1,
 %%the below declarations are to prevent warnings about shapes not being available
-ItalicFont=Redacted,%
-BoldItalicFont=Redacted,%
-BoldFont=Redacted,%
-SmallCapsFont=Redacted]{Redacted}
+%WordSpace=0,
+ItalicFont={Redacted},%
+BoldItalicFont={Redacted},%
+BoldFont={Redacted},%
+SmallCapsFont={Redacted}]{Redacted}
 \newcommand{\onething}{\cnsrfnt\ • }
-\newcommand{\twothings}{\cnsrfnt\ • • }
-\newcommand{\donothing}{}
+\newcommand{\twothings}{\cnsrfnt\ • •}
+\newcommand{\donothing}{\cnsrfnt\ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The little spaces let justification happen
@@ -70,7 +84,7 @@ SmallCapsFont=Redacted]{Redacted}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% x chosen as an arbitrary average width
+% • chosen as an arbitrary average width
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 }{
@@ -93,7 +107,7 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\onething}{\cnsrfnt ▬ }
 \newcommand{\twothings}{\cnsrfnt ▬ ▬ }
-\newcommand{\donothing}{}
+\newcommand{\donothing}{ }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,15 +148,14 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 
 \newif\ifcnsr\cnsrfalse
 \newcommand{\cnsr}[1]{%
-  \ifcnsr{%
-
-\voidenvironment{equation*}
-\voidenvironment{equation}
-\voidenvironment{table}
-\voidenvironment{table*}
-\voidenvironment{tabular}
-\voidenvironment{tabular*}
-\voidenvironment{}
+\ifcnsr{%
+\voidenvironment{equation*}%
+\voidenvironment{equation}%
+\voidenvironment{table}%
+\voidenvironment{table*}%
+\voidenvironment{tabular}%
+\voidenvironment{tabular*}%
+\voidenvironment{}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % I don't know how many
 % people use TEX native accent commands
@@ -151,43 +164,29 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\`}[1]{}
-\renewcommand{\'}[1]{}
-\renewcommand{\^}[1]{}
-\renewcommand{\"}[1]{}
-\renewcommand{\H}[1]{}
-\renewcommand{\~}[1]{}
-\renewcommand{\c}[1]{}
-\renewcommand{\k}[1]{}
-\renewcommand{\l}[1]{}
-\renewcommand{\=}[1]{}
-\renewcommand{\b}[1]{}
-\renewcommand{\.}[1]{}
-\renewcommand{\d}[1]{}
-\renewcommand{\r}[1]{}
-\renewcommand{\u}[1]{}
-\renewcommand{\v}[1]{}
-\renewcommand{\t}[1]{}
-\renewcommand{\o}[1]{}
-\renewcommand{\i}[1]{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TEX primitives can break the
-%code because they don't have the good manners
-%to put their arguments in brackets
-%No offence, of course, to the 
-%honoured Prof Knuth, who had
-%magnificent genius reasons 
-%for coding things that way
-%it's just that i'm an idiot
-%and therefore need things simple
+\renewcommand{\`}[1]{}%
+\renewcommand{\'}[1]{}%
+\renewcommand{\^}[1]{}%
+\renewcommand{\"}[1]{}%
+\renewcommand{\H}[1]{}%
+\renewcommand{\~}[1]{}%
+\renewcommand{\c}[1]{}%
+\renewcommand{\k}[1]{}%
+\renewcommand{\l}[1]{}%
+\renewcommand{\=}[1]{}%
+\renewcommand{\b}[1]{}%
+\renewcommand{\.}[1]{}%
+\renewcommand{\d}[1]{}%
+\renewcommand{\r}[1]{}%
+\renewcommand{\u}[1]{}%
+\renewcommand{\v}[1]{}%
+\renewcommand{\t}[1]{}%
+\renewcommand{\o}[1]{}%
+\renewcommand{\i}[1]{}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\hskip}[1]{}
-\renewcommand{\vskip}[1]{}
-\renewcommand{\raise}[1]{}
-\renewcommand{\lower}[1]{}
-\renewcommand{\kern}[1]{}
 % here we have the accsupp magic
 % this operates by replacing the 'x's 
 % or unicode black squares as the case
@@ -202,10 +201,9 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \BeginAccSupp{method=plain,ActualText={TEXT REDACTED}}%
-\rndstring{#1}
-\EndAccSupp{}%
-}
-  \else%
+\rndstring{#1}%
+\EndAccSupp{}}%
+\else%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if the conditional is off
@@ -226,11 +224,10 @@ ItalicFont={Source Sans Pro Black},BoldItalicFont={Source Sans Pro Black},BoldFo
 \begin{luacode}
 --fulsome thanks to TeX.SE users Henri Menke and David Carlisle, without whom none of this would be possible 
 local function rndstring()
-
     local toks = token.scan_toks(s)
         local on = true
 for n, t in ipairs(toks) do
-    if t.csname == "begin" or t.csname == "end"  then
+    if t.csname == "begin" or t.csname == "end" then
        on = false
 -- The below is necessary as TeX primitives can break the code otherwise because they do not use brackets       
     end
@@ -242,7 +239,7 @@ end
 if on and t.csname ==  "&" then
   local letter = token.create'donothing'
  toks[n] = letter
-
+ 
 elseif on and t.csname == "%" then
   local letter = token.create'donothing'
  toks[n] = letter
@@ -365,3 +362,91 @@ local lft = lua.get_functions_table()
 lft[#lft + 1] = rndstring
 token.set_lua("rndstring", #lft, "global")
 \end{luacode}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WARNING FUN YAY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitely this whole section
+%is there to be user modified, because 
+% depending on language, jurisdiction
+%type of document etc, everyone will need
+%a specific warning style. So the important
+% part of the code here is the 
+% conditional and global [warning]
+% option, because that's the magic value added
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fonts for the warning:
+%I chose default LaTeX fonts
+% here to be changed as users wish
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newfontface\wrnstncl{QT Military}
+\newcommand{\warnword}{WARNING}
+\newfontface\smbl{Deja Vu Sans Bold}
+\newcommand{\danger}{\smbl ⚠︎\normalfont}
+\newcommand{\warnformat}{\sffamily\bfseries \color{red}}
+\newcommand{\textwarn}{This document is {\underline{NOT}}  redacted. It contains private and confidential personal data, and may {\underline{NOT}} be distributed, published, or shown to those without the right to view such information.  The publication of the information in this document may constitute a contempt of court, punishable by a term of imprisonment.}
+\newcommand{\textsafe}{This document has been altered to remove sensitive personal data.  It is cleared for publication and dissemination.
+}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+	\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\newcommand{\dquad}{\danger\danger\danger\danger}
+\newcommand{\dangersign}[1]{\scalebox{2}{\huge\danger}}
+\newcommand{\dangerblock}{\scalebox{2}{\huge\danger\quad\danger\quad\danger}}
+\newcommand{\warnblock}{{\Large\wrnstncl\warnword\quad\warnword\quad\warnword}}
+\newcommand{\tworules}{\hrule width \hsize height .7pt\vskip2pt\hrule width \hsize height .7pt}
+\newcommand{\allwarning}{\dangerblock\\\warnblock\\\normalfont\smallskip\warnformat\textwarn }
+\newcommand{\confwarning}{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The warning option
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifwarning
+\ifcnsr 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a note saying document is redacted
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\color{forestgreen}
+\tworules\vskip5pt
+\normalsize\normalfont\sffamily\bfseries\textsafe
+\vskip5pt\tworules
+\end{center}
+\else 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The WARNING for un-redacted docs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}\color{red}\tworules\vskip 5pt\allwarning
+\vskip5pt\tworules%
+\end{center}%
+\fi%
+\else\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allow \maketitle
+% on same page 
+% yay
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifwarning\let\oldmaketitle\maketitle\renewcommand{\maketitle}{{\let\newpage\relax\maketitle}}\else\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% print the warning at the start of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{\confwarning}
