@@ -1,0 +1,337 @@
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2022.2.25)  28 FEB 2022 11:24
+ restricted system commands enabled.
+ file:line:error style messages enabled.
+**dev-test.tex
+(./dev-test.tex
+LaTeX2e <2021-11-15> patch level 1
+Lua module: luaotfload 2021-05-21 3.18 Lua based OpenType font support
+Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2021-05-20 2.74 ConTeXt Lua libraries -- extended collection.
+luaotfload | conf : Root cache directory is "/Users/ezgranet/Library/texlive/2021/texmf-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2021-05-20.lua" from kpse-resolved path "/usr/local/texlive/2021/texmf-dist/tex/luatex/luaotfload/fontloader-2021-05-20.lua".
+Lua-only attribute luaotfload@noligature = 1
+Lua-only attribute luaotfload@syllabe = 2
+luaotfload | init : Context OpenType loader version 3.116
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 3
+luaotfload | conf : Root cache directory is "/Users/ezgranet/Library/texlive/2021/texmf-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_truetype_file'.
+Inserting `luaotfload.harf.finalize_vlist' at position 1 in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' at position 2 in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' at position 1 in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' at position 1 in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' at position 1 in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 4
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'. L3 programming layer <2022-02-24>
+Inserting `tracingstacklevels' at position 1 in `input_level_string'. (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /Users/ezgranet/Library/texlive/2021/texmf-var/luatex-cache/generic/names/luaotfload-names.luc)
+\c@part=\count183
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\c@figure=\count189
+\c@table=\count190
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen137
+) (./luacensor-dev.sty
+Package: luacensor-dev 2022/02/22 1.1.1\ Redact sensitive information using Lua
+ (/usr/local/texlive/2021/texmf-dist/tex/lualatex/luacode/luacode.sty
+Package: luacode 2012/01/23 v1.2a lua-in-tex helpers (mpg)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)) (/usr/local/texlive/2021/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+ (/usr/local/texlive/2021/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count191
+)
+\CatcodeTableOther=\catcodetable12
+\CatcodeTableExpl=\catcodetable13
+)
+\luacode@lines=\toks16
+\luacode@table@soft=\catcodetable14
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks17
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks18
+\verbatim@line=\toks19
+\verbatim@in@stream=\read2
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/accsupp/accsupp.sty
+Package: accsupp 2019/12/05 v0.6 Accessibility support by marked content (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks20
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/accsupp/accsupp-luatex.def
+File: accsupp-luatex.def 2019/12/05 v0.6 accsupp driver for pdfTeX (HO)
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2022-02-07 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count192
+\l__pdf_internal_box=\box50
+))
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX (/usr/local/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count193
+\l__fontspec_language_int=\count194
+\l__fontspec_strnum_int=\count195
+\l__fontspec_tmp_int=\count196
+\l__fontspec_tmpa_int=\count197
+\l__fontspec_tmpb_int=\count198
+\l__fontspec_tmpc_int=\count199
+\l__fontspec_em_int=\count266
+\l__fontspec_emdef_int=\count267
+\l__fontspec_strong_int=\count268
+\l__fontspec_strongdef_int=\count269
+\l__fontspec_tmpa_dim=\dimen138
+\l__fontspec_tmpb_dim=\dimen139
+\l__fontspec_tmpc_dim=\dimen140
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 227.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2021/06/01 v1.2c Graphics/color driver for luatex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+)
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
+luaotfload | cache : Lookup cache loaded from /Users/ezgranet/Library/texlive/2021/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+luaotfload | aux : font no 19 (nil) defines no feature for script latn
+luaotfload | aux : font no 19 (nil) defines no feature for script dflt
+
+Package fontspec Info: Font family 'Redacted-Regular.ttf(0)' created for font
+(fontspec)             'Redacted-Regular.ttf' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},ItalicFont={Redacted-Regular.ttf},BoldItalicFont={Redacted-Regular.ttf},BoldFont={Redacted-Regular.ttf},SmallCapsFont={Redacted-Regular.ttf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+
+
+Package fontspec Info: Font family 'QTMilitary(0)' created for font 'QT
+(fontspec)             Military' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"QTMilitary:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'DejaVuSansBold(0)' created for font 'Deja
+(fontspec)             Vu Sans Bold' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"DejaVuSansBold:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+) (/Users/ezgranet/Documents/GitHub/luacensor/.texpadtmp/dev-test.aux)
+\openout1 = dev-test.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 4.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 4.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 4.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 4.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 4.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 4.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 4.
+LaTeX Font Info:    Redeclaring math accent \check on input line 4.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 4.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 4.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 4.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 4.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 4.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 4.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 4.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 4.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 4.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 4.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 4.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count270
+\scratchdimen=\dimen143
+\scratchbox=\box51
+\nofMPsegments=\count271
+\nofMParguments=\count272
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count273
+\MPscratchDim=\dimen144
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) [1
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/ezgranet/Documents/GitHub/luacensor/.texpadtmp/dev-test.aux))
+
+Here is how much of LuaTeX's memory you used:
+ 5364 strings out of 477800
+ 100000,552014 words of node,token memory allocated
+ 406 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 48 glue_spec, 4 attribute_list, 1 write nodes
+   avail lists: 1:1,2:39,3:8,4:10,5:23,6:2,7:76,9:24
+ 25842 multiletter control sequences out of 65536+600000
+ 26 fonts using 4160383 bytes
+ 83i,5n,87p,396b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
+</Users/ezgranet/Library/Fonts/Redacted-Regular.ttf></Users/ezgranet/Library/Fonts/lmroman10-regular.otf>
+Output written on dev-test.pdf (1 page, 7324 bytes).
+
+PDF statistics: 22 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+

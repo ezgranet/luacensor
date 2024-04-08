@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}In the preamble: \PYGZbs{}usepackage\PYGZob{}luacensor\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}quote\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}footnotesize} \PYG{k}{\PYGZbs{}cnsr}\PYG{n+nb}{\PYGZob{}}Whereas recognition\PYG{n+nb}{\PYGZcb{}} of the \PYG{k}{\PYGZbs{}cnsrtrue\PYGZbs{}cnsr}\PYG{n+nb}{\PYGZob{}}inherent dignity and of the equal and inalienable rights of all members of the human family\PYG{n+nb}{\PYGZcb{}} is the foundation of freedom, justice and peace in the world,
+
+\PYG{k}{\PYGZbs{}cnsr}\PYG{n+nb}{\PYGZob{}}Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind, and the advent of a world in which human beings shall enjoy freedom of speech and belief and freedom from fear and want has been proclaimed as the highest aspiration of the common people,\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}quote\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

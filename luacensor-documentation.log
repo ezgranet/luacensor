@@ -1,0 +1,898 @@
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.4.1)  7 APR 2024 17:11
+ system commands enabled.
+**/Users/ezgranet/Documents/GitHub/luacensor/luacensor-documentation.tex
+(/Users/ezgranet/Documents/GitHub/luacensor/luacensor-documentation.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+Lua module: luaotfload 2024-02-14 3.28 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended collection.
+luaotfload | conf : Root cache directory is "/Users/ezgranet/Library/texlive/2024/texmf-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-resolved path "/usr/local/texlive/2024/texmf-dist/tex/luatex/luaotfload/fontloader-2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/Users/ezgranet/Library/texlive/2024/texmf-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /Users/ezgranet/Library/texlive/2024/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen139
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks18
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count194
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
+)
+\@linkdim=\dimen140
+\Hy@linkcounter=\count196
+\Hy@pagecounter=\count197
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count198
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count199
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen141
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count266
+\Field@Width=\dimen142
+\Fld@charsize=\dimen143
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count267
+\c@Item=\count268
+\c@Hfootnote=\count269
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2024-01-20 v7.01h Hyperref driver for luaTeX
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count270
+\c@bookmark@seq@number=\count271
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip50
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/03/29 v24.3 The Babel package
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@vietnamese=\language4
+\l@hebrew=\language5
+\l@german-x-2024-02-28=\language6
+\l@ngerman-x-2024-02-28=\language7
+\l@afrikaans=\language8
+\l@ancientgreek=\language9
+\l@ibycus=\language10
+\l@arabic=\language11
+\l@armenian=\language12
+\l@basque=\language13
+\l@belarusian=\language14
+\l@bulgarian=\language15
+\l@catalan=\language16
+\l@pinyin=\language17
+\l@churchslavonic=\language18
+\l@coptic=\language19
+\l@croatian=\language20
+\l@czech=\language21
+\l@danish=\language22
+\l@dutch=\language23
+\l@ukenglish=\language24
+\l@usenglishmax=\language25
+\l@esperanto=\language26
+\l@estonian=\language27
+\l@ethiopic=\language28
+\l@farsi=\language29
+\l@finnish=\language30
+\l@schoolfinnish=\language31
+\l@french=\language32
+\l@friulan=\language33
+\l@galician=\language34
+\l@georgian=\language35
+\l@german=\language36
+\l@ngerman=\language37
+\l@swissgerman=\language38
+\l@greek=\language39
+\l@monogreek=\language40
+\l@hungarian=\language41
+\l@icelandic=\language42
+\l@assamese=\language43
+\l@bengali=\language44
+\l@gujarati=\language45
+\l@hindi=\language46
+\l@kannada=\language47
+\l@malayalam=\language48
+\l@marathi=\language49
+\l@oriya=\language50
+\l@pali=\language51
+\l@panjabi=\language52
+\l@tamil=\language53
+\l@telugu=\language54
+\l@indonesian=\language55
+\l@interlingua=\language56
+\l@irish=\language57
+\l@italian=\language58
+\l@kurmanji=\language59
+\l@classiclatin=\language60
+\l@latin=\language61
+\l@liturgicallatin=\language62
+\l@latvian=\language63
+\l@lithuanian=\language64
+\l@macedonian=\language65
+\l@mongolian=\language66
+\l@mongolianlmc=\language67
+\l@bokmal=\language68
+\l@nynorsk=\language69
+\l@occitan=\language70
+\l@piedmontese=\language71
+\l@polish=\language72
+\l@portuguese=\language73
+\l@romanian=\language74
+\l@romansh=\language75
+\l@russian=\language76
+\l@sanskrit=\language77
+\l@serbian=\language78
+\l@serbianc=\language79
+\l@slovak=\language80
+\l@slovenian=\language81
+\l@spanish=\language82
+\l@swedish=\language83
+\l@thai=\language84
+\l@turkish=\language85
+\l@turkmen=\language86
+\l@ukrainian=\language87
+\l@uppersorbian=\language88
+\l@welsh=\language89
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count272
+\U@D=\dimen144
+\l@unhyphenated=\language90
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/british.ldf
+Language: british 2017/06/06 v3.3r English support from the babel system
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language24). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language24). Reported on input line 108.
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-gb.tex ASCII Hyphenation patterns for British English (/usr/local/texlive/2024/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-gb.tex))))) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/en/babel-british.tex
+Package babel Info: Importing font and identification data for british
+(babel)             from babel-en-GB.ini. Reported on input line 11.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/datetime2/datetime2.sty
+Package: datetime2 2021/03/21 v1.5.7 (NLCT) date and time formats
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+)
+\XKV@depth=\count273
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/datetime2-english/datetime2-en-GB.ldf
+File: datetime2-en-GB.ldf 2019/10/21 v1.05 (NLCT)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+File: datetime2-english-base.ldf 2019/10/21 v1.05 (NLCT)
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+) (./luacensor.sty
+Package: luacensor 2024/04/06 1.1.1\ Redact sensitive information using Lua
+ (/usr/local/texlive/2024/texmf-dist/tex/lualatex/luacode/luacode.sty
+Package: luacode 2012/01/23 v1.2a lua-in-tex helpers (mpg)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/local/texlive/2024/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+ (/usr/local/texlive/2024/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count274
+)
+\CatcodeTableOther=\catcodetable16
+\CatcodeTableExpl=\catcodetable17
+)
+\luacode@lines=\toks21
+\luacode@table@soft=\catcodetable18
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks22
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks23
+\verbatim@line=\toks24
+\verbatim@in@stream=\read3
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/accsupp/accsupp.sty
+Package: accsupp 2019/12/05 v0.6 Accessibility support by marked content (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/accsupp/accsupp-luatex.def
+File: accsupp-luatex.def 2019/12/05 v0.6 accsupp driver for pdfTeX (HO)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-03-14 L3 programming layer (loader) 
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2024-03-14 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count275
+Inserting `l3color' in `luaotfload.parse_color'.
+\l__pdf_internal_box=\box51
+))
+Package: xparse 2024-03-14 L3 Experimental document command parser
+)
+Package: fontspec 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2024/02/13 2.9a Font selection for XeLaTeX and LuaLaTeX (/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count276
+\l__fontspec_language_int=\count277
+\l__fontspec_strnum_int=\count278
+\l__fontspec_tmp_int=\count279
+\l__fontspec_tmpa_int=\count280
+\l__fontspec_tmpb_int=\count281
+\l__fontspec_tmpc_int=\count282
+\l__fontspec_em_int=\count283
+\l__fontspec_emdef_int=\count284
+\l__fontspec_strong_int=\count285
+\l__fontspec_strongdef_int=\count286
+\l__fontspec_tmpa_dim=\dimen145
+\l__fontspec_tmpb_dim=\dimen146
+\l__fontspec_tmpc_dim=\dimen147
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+)
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+luaotfload | cache : Lookup cache loaded from /Users/ezgranet/Library/texlive/2024/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+luaotfload | aux : font no 19 (nil) defines no feature for script latn
+luaotfload | aux : font no 19 (nil) defines no feature for script dflt
+
+Package fontspec Info: Font family 'Redacted-Regular.ttf(0)' created for font
+(fontspec)             'Redacted-Regular.ttf' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},ItalicFont={Redacted-Regular.ttf},BoldItalicFont={Redacted-Regular.ttf},BoldFont={Redacted-Regular.ttf},SmallCapsFont={Redacted-Regular.ttf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"[Redacted-Regular.ttf]:mode=node;language=dflt;"
+
+
+Package fontspec Info: Font family 'QTMilitary(0)' created for font 'QT
+(fontspec)             Military' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"name:QTMilitary:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'DejaVuSans-Bold(0)' created for font
+(fontspec)             'DejaVuSans-Bold' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"name:DejaVuSans-Bold:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+)
+
+Package fontspec Info: Font family 'PalatineParliamentary(0)' created for font
+(fontspec)             'Palatine Parliamentary' with options
+(fontspec)             [Ligatures=TeX,RawFeature={+onum,+pnum}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/B:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/B:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/I:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/I:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;+smcp;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/BI:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"name:PalatineParliamentary/BI:mode=node;script=latn;language=dflt;+tlig;+onum,+pnum;+smcp;"
+
+
+Package fontspec Info: DejaVuSansMono scale = .9.
+
+
+Package fontspec Info: DejaVuSansMono scale = .9.
+
+luaotfload | aux : font no 44 (nil) does not define feature smcp for script latn with language dflt
+
+Package fontspec Info: DejaVuSansMono/B scale = .9.
+
+luaotfload | aux : font no 45 (nil) does not define feature smcp for script latn with language dflt
+
+Package fontspec Info: DejaVuSansMono/I scale = .9.
+
+luaotfload | aux : font no 46 (nil) does not define feature smcp for script latn with language dflt
+
+Package fontspec Info: DejaVuSansMono/BI scale = .9.
+
+luaotfload | aux : font no 47 (nil) does not define feature smcp for script latn with language dflt
+
+Package fontspec Info: Font family 'DejaVuSansMono(0)' created for font 'Deja
+(fontspec)             Vu Sans Mono' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,Scale=.9].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[.9]"name:DejaVuSansMono:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[.9]"name:DejaVuSansMono/B:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[.9]"name:DejaVuSansMono/I:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[.9]"name:DejaVuSansMono/BI:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2023/11/28 v1.6.1 fvextra - extensions and patches for fancyvrb
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count287
+\FV@InFile=\read4
+\FV@TabBox=\box52
+\c@FancyVerbLine=\count288
+\FV@StepNumber=\count289
+\FV@OutFile=\write3
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count290
+\output=\toks25
+\linenoprevgraf=\count291
+\linenumbersep=\dimen150
+\linenumberwidth=\dimen151
+\c@linenumber=\count292
+\c@pagewiselinenumber=\count293
+\c@LN@truepage=\count294
+\c@internallinenumber=\count295
+\c@internallinenumbers=\count296
+\quotelinenumbersep=\dimen152
+\bframerule=\dimen153
+\bframesep=\dimen154
+\bframebox=\box53
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count297
+\c@FancyVerbBufferIndex=\count298
+\c@FancyVerbBufferLength=\count299
+\c@FancyVerbBufferLine=\count300
+\c@FV@oldbufferlength=\count301
+\c@FV@TrueTabGroupLevel=\count302
+\c@FV@TrueTabCounter=\count303
+\FV@TabBox@Group=\box54
+\FV@TmpLength=\skip51
+\c@FV@HighlightLinesStart=\count304
+\c@FV@HighlightLinesStop=\count305
+\FV@LoopCount=\count306
+\FV@NCharsBox=\box55
+\FV@BreakIndent=\dimen155
+\FV@BreakIndentNChars=\count307
+\FV@BreakSymbolSepLeft=\dimen156
+\FV@BreakSymbolSepLeftNChars=\count308
+\FV@BreakSymbolSepRight=\dimen157
+\FV@BreakSymbolSepRightNChars=\count309
+\FV@BreakSymbolIndentLeft=\dimen158
+\FV@BreakSymbolIndentLeftNChars=\count310
+\FV@BreakSymbolIndentRight=\dimen159
+\FV@BreakSymbolIndentRightNChars=\count311
+\c@FancyVerbLineBreakLast=\count312
+\FV@LineBox=\box56
+\FV@LineIndentBox=\box57
+\c@FV@BreakBufferDepth=\count313
+\FV@LineWidth=\dimen160
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+runsystem(uname -s > "luacensor-documentation.w18")...executed.
+ (./luacensor-documentation.w18)
+runsystem(rm -- "luacensor-documentation.w18")...executed.
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count314
+\xs_countb=\count315
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip52
+\fb@frw=\dimen161
+\fb@frh=\dimen162
+\FrameRule=\dimen163
+\FrameSep=\dimen164
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count316
+\float@exts=\toks26
+\float@box=\box58
+\@float@everytoks=\toks27
+\@floatcapt=\box59
+)
+\minted@appexistsfile=\read5
+\minted@bgbox=\box60
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count317
+\c@minted@pygmentizecounter=\count318
+\@float@every@listing=\toks28
+\c@listing=\count319
+)
+runsystem(mkdir -p _minted-luacensor-documentation)...executed.
+runsystem(command -v pygmentize && touch luacensor-documentation.aex)...executed.
+runsystem(rm luacensor-documentation.aex)...executed.
+ (./luacensor-documentation.aux)
+\openout1 = luacensor-documentation.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 22.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count320
+\scratchdimen=\dimen165
+\scratchbox=\box61
+\nofMPsegments=\count321
+\nofMParguments=\count322
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count323
+\MPscratchDim=\dimen166
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
+\everyMPtoPDFconversion=\toks30
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring OFF on input line 22.
+ (./luacensor-documentation.out) (./luacensor-documentation.out)
+\@outlinefile=\write5
+
+\openout5 = luacensor-documentation.out
+\big@size=\dimen167
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 15.55188pt on input line 24.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 24.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 24.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 24.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 24.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 24.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 24.
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 24.
+ (./luacensor-documentation.toc
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 5.
+ [1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write6
+
+\openout6 = luacensor-documentation.toc
+
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/default.pygstyle) (./_minted-luacensor-documentation/54AE07862F64EA53772681F025885DF581EE3D0764CB02A51742C060840A04A6.pygtex
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 2.
+)
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/6632696F5F6156A3CAD2A6956B3AC34081EE3D0764CB02A51742C060840A04A6.pygtex)
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/359437CA228E44A40ADE797F7D315F1181EE3D0764CB02A51742C060840A04A6.pygtex)
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 51.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 51.
+
+
+\openout3 = luacensor-documentation.pyg
+(./_minted-luacensor-documentation/5114D821FFE6FBCB8FBA3CA5D5A3AE8A81EE3D0764CB02A51742C060840A04A6.pygtex) [2]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/E233364F1C83ABEF9E7714F0C3D6ED5581EE3D0764CB02A51742C060840A04A6.pygtex)
+Overfull \hbox (20.27036pt too wide) in paragraph at lines 84--85
+\TU/PalatineParliamentary(0)/m/n/10 mand []\TU/DejaVuSansMono(0)/m/n/10 \warnword \TU/PalatineParliamentary(0)/m/n/10 to change the word ‘warn-ing’, re-new the com-mand []\TU/DejaVuSansMono(0)/m/n/10 \dangerblock
+ []
+
+
+\openout3 = luacensor-documentation.pyg
+(./_minted-luacensor-documentation/C6C090FD24F405C03EE0EA99AB54495F81EE3D0764CB02A51742C060840A04A6.pygtex)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 98.
+
+[3
+
+]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/634B3D527FB7F1D64F810057FAF246F281EE3D0764CB02A51742C060840A04A6.pygtex
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/it' will be
+(Font)              scaled to size 7.19995pt on input line 2.
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 3.
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 4.49997pt on input line 4.
+)
+Overfull \hbox (2.0pt too wide) in paragraph at lines 118--119
+[]\TU/Redacted-Regular.ttf(0)/m/n/8 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+ []
+
+
+Overfull \hbox (2.0pt too wide) in paragraph at lines 118--119
+\TU/Redacted-Regular.ttf(0)/m/n/8 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+ []
+
+[4]
+Overfull \hbox (1.60341pt too wide) in paragraph at lines 125--126
+\TU/PalatineParliamentary(0)/m/n/10 solu-tion which in-cludes ac-cess-ib-il-ity fea-tures to al-low screen read-ers to be aware
+ []
+
+[5
+
+] [6]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/171DBE01ADD427035A10AED0CADCCF1781EE3D0764CB02A51742C060840A04A6.pygtex)
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/2D1583B5B087BE8CEA4CDDF1639C710781EE3D0764CB02A51742C060840A04A6.pygtex)
+Overfull \vbox (0.81378pt too high) detected at line 227
+ []
+
+[7
+
+]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/332E0A2CF2737B1E146B19F2CBE8E30881EE3D0764CB02A51742C060840A04A6.pygtex) [8]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/3D545B809E003C3ED477B63DC6823F8E81EE3D0764CB02A51742C060840A04A6.pygtex) [9]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/BE316A39EC560AABBFC2A35B99133D6F81EE3D0764CB02A51742C060840A04A6.pygtex) [10]
+Underfull \vbox (badness 10000) detected at line 430
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 430
+ []
+
+[11]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/FCEB5DAE0EE271871E7B2EF7967FD33081EE3D0764CB02A51742C060840A04A6.pygtex)
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/7EBCB4B3AC1421F67CFA2F67130526D1A8D8131BFAFB338B4E111C280A2580C0.pygtex) [12]
+Underfull \vbox (badness 10000) detected at line 602
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 602
+ []
+
+[13]
+Underfull \vbox (badness 10000) detected at line 602
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 602
+ []
+
+[14]
+\openout3 = luacensor-documentation.pyg
+ (./_minted-luacensor-documentation/61F280DD21F19592034D9723D1EE04E081EE3D0764CB02A51742C060840A04A6.pygtex)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 616.
+
+
+\openout3 = luacensor-documentation.pyg
+(./_minted-luacensor-documentation/188D84E965010525043C2F11AE8071D881EE3D0764CB02A51742C060840A04A6.pygtex
+Overfull \hbox (3.44383pt too wide) in paragraph at lines 42--42
+|| ||[]\TU/DejaVuSansMono(0)/b/n/8 \newcommand[][]\TU/DejaVuSansMono(0)/m/n/8 {[][]\TU/DejaVuSansMono(0)/b/n/8 \warnblock[][]\TU/DejaVuSansMono(0)/m/n/8 }{{[][]\TU/DejaVuSansMono(0)/b/n/8 \Large\wrnstncl\warnword\quad\warnword\quad\warnword[][]\TU/DejaVuSansMono(0)/m/n/8 }}[]|  
+ []
+
+
+Overfull \hbox (59.79535pt too wide) in paragraph at lines 44--44
+|| ||[]\TU/DejaVuSansMono(0)/b/n/8 \newcommand[][]\TU/DejaVuSansMono(0)/m/n/8 {[][]\TU/DejaVuSansMono(0)/b/n/8 \allwarning[][]\TU/DejaVuSansMono(0)/m/n/8 }{[][]\TU/DejaVuSansMono(0)/b/n/8 \dangerblock\\\warnblock\\\normalfont\smallskip\warnformat\textwarn[] 
+ []
+
+
+Overfull \hbox (103.14267pt too wide) in paragraph at lines 83--83
+|| ||[]\TU/DejaVuSansMono(0)/b/n/8 \ifwarning\let\oldmaketitle\maketitle\renewcommand[][]\TU/DejaVuSansMono(0)/m/n/8 {[][]\TU/DejaVuSansMono(0)/b/n/8 \maketitle[][]\TU/DejaVuSansMono(0)/m/n/8 }{{[][]\TU/DejaVuSansMono(0)/b/n/8 \let\newpage\relax\maketitle[][]\TU/DejaVuSansMono(0)/m/n/8 }}[][]\TU/DejaVuSansMono(0)/b/n/8 \else\fi[]|  
+ []
+
+) [15]
+Underfull \vbox (badness 10000) detected at line 716
+ []
+
+
+Overfull \vbox (7.19762pt too high) detected at line 716
+ []
+
+[16]
+Overfull \hbox (1.7793pt too wide) in paragraph at lines 719--720
+\TU/DejaVuSansMono(0)/m/n/10 6 April 2024: Fixed an issue with OTF for dejavusans not loading
+ []
+
+[17]
+Overfull \hbox (18.03458pt too wide) in paragraph at lines 722--723
+\TU/DejaVuSansMono(0)/m/n/10 22 February 2022: Added the `warning' option and fixed a few errors
+ []
+
+[18] (./luacensor-documentation.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+ ***********
+Package rerunfilecheck Info: File `luacensor-documentation.out' has not changed.
+(rerunfilecheck)             Checksum: 0CA9A826F82647DCB3276DF75BF9D719;3239.
+runsystem(rm luacensor-documentation.pyg)...executed.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 19881 strings out of 476435
+ 125189,1977958 words of node,token memory allocated
+ 516 words of node memory still in use:
+   4 hlist, 1 vlist, 1 rule, 9 glue, 3 kern, 1 glyph, 15 attribute, 52 glue_spec, 9 attribute_list, 1 write nodes
+   avail lists: 2:12616,3:489,4:870,5:694,6:199,7:7381,8:42,9:1612,10:14,11:448
+ 41233 multiletter control sequences out of 65536+600000
+ 202 fonts using 29010607 bytes
+ 94i,11n,102p,954b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/ezgranet/Library/Fonts/Redacted-Regular.ttf></Users/ezgranet/Library/Fonts/DejaVuSansMono-Oblique.ttf></Users/ezgranet/Library/Fonts/lmsans10-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/qualitype/QTMilitary.otf></Users/ezgranet/Library/Fonts/DejaVuSans-Bold.ttf></Users/ezgranet/Library/Fonts/PalatineP-Italic.otf></Users/ezgranet/Library/Fonts/DejaVuSansMono-Bold.ttf></Users/ezgranet/Library/Fonts/PalatineP-Bold.otf></Users/ezgranet/Library/Fonts/PalatineP-Regular.otf></Users/ezgranet/Library/Fonts/DejaVuSansMono.ttf></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on luacensor-documentation.pdf (18 pages, 159039 bytes).
+
+PDF statistics: 307 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 131072)
+ 201 words of extra memory for PDF output out of 10000 (max. 100000000)
+

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+ \PYG{k}{\PYGZbs{}renewcommand}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}textsafe}\PYG{n+nb}{\PYGZcb{}\PYGZob{}}This is the text in safe mode\PYG{n+nb}{\PYGZcb{}}	
+
+\end{Verbatim}
